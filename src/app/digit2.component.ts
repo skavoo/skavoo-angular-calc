@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'digit-component',
+  selector: 'digit2-component',
   template: `
     <table class="digit-table">
       <thead>
@@ -28,8 +28,9 @@ import {
   `,
   styleUrls: ['./app.component.css']
 })
-export class DigitComponent implements OnChanges, OnInit {
-  @Input() numero: number;
+export class Digit2Component implements OnChanges, OnInit {
+  @Input() numero1: number;
+  @Input() numero2: number;
   digits: string[] = [];
 
   ngOnInit() {
@@ -39,16 +40,16 @@ export class DigitComponent implements OnChanges, OnInit {
   ngOnChanges(changes: SimpleChanges) {
     this.digits = [];
     console.log(changes);
-    if (!changes.numero.firstChange) {
+    if (changes.numero2 && !changes.numero2.firstChange) {
       for (const propName in changes) {
         const change = changes[propName];
         const to = JSON.stringify(change.currentValue);
         const from = JSON.stringify(change.previousValue);
+        const _numero1 = JSON.stringify(this.numero1);
 
         for (var j = 0, len = 4 - to.length; j < len; j += 1) {
           this.digits.push('\u00A0\u00A0');
         }
-
         for (var i = 0, len = to.length; i < len; i += 1) {
           if (to.charAt(i) === '.') {
             this.digits.push(',');
