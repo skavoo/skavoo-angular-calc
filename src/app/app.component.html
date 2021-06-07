@@ -1,25 +1,27 @@
-<h1>{{title}}</h1>
-
 <p> Numero 1: <input type='number' [(ngModel)]='numero1'> </p>
 <p>
   Numero 2: <input type='number' [(ngModel)]='numero2'>
 
   <button class='b' style="margin-left:2.5em" (click)="onReset()">
+    <i class="fa fa-repeat"></i>
     Reset
   </button>
 </p>
 
 <button class='b' (click)="onAddizione()">
-    Addizione
+  <i class="fa fa-plus"></i>
+  Addizione
 </button>
 <button class='b' style="margin-left:2.5em" (click)="onSottrazione()">
-    Sottrazione
+  <i class="fa fa-minus"></i>
+  Sottrazione
 </button>
 
-<br>
+<br><br><br><br><br>
 <table class="digit-table-h">
   <thead>
     <tr>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -38,8 +40,9 @@
       <td>&nbsp;</td>
       <td>d</td>
       <td>c</td>
+      <td>&nbsp;</td>
     </tr>
   </tbody>
 </table>
 <digit-component [numero]=numero1 [segno]=segno></digit-component>
-<digit-component [numero]=numero2 [segno]=segno></digit-component>
+<digit-component [numero]=numero2></digit-component>

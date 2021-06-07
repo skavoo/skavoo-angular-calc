@@ -6,14 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Calcolatrice';
   numero1 = 0;
   numero2 = 0;
-  segno = '+';
+  segno = '';
 
   onReset() {
     this.numero1 = 0;
     this.numero2 = 0;
+    this.segno = '';
   }
 
   onAddizione() {
