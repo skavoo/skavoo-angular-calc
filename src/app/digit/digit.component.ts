@@ -15,6 +15,7 @@ import {
 })
 export class DigitComponent implements OnChanges, OnInit {
   @Input() numero: number;
+  @Input() segno: string;
   digits: string[] = [];
 
   cifreIntere: number = 4;
@@ -35,9 +36,9 @@ export class DigitComponent implements OnChanges, OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.digits = [];
     console.log(changes);
-    if (!changes.numero.firstChange) {
+    if (changes['numero'] && !changes.numero.firstChange) {
+      this.digits = [];
       if (changes.numero.currentValue == null) {
         this.ngOnInit();
       } else {
