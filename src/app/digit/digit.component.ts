@@ -38,7 +38,7 @@ export class DigitComponent implements OnChanges, OnInit {
     this.digits = [];
     console.log(changes);
     if (!changes.numero.firstChange) {
-      if (!changes.numero.currentValue) {
+      if (changes.numero.currentValue == null) {
         this.ngOnInit();
       } else {
         for (const propName in changes) {

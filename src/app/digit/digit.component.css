@@ -6,4 +6,8 @@
 .digit-table td {
   border: 3px solid #000000;
   padding: 10px;
+  text-align: center;
+  font-size: 30px;
+  height: 50px;
+  width: 50px;
 }
