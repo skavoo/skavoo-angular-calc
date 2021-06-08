@@ -9,6 +9,7 @@ export class AppComponent {
   numero1 = 0;
   numero2 = 0;
   segno = '';
+  risultato = [];
 
   onReset() {
     this.numero1 = 0;

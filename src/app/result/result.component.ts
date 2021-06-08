@@ -12,9 +12,15 @@ import {
   styleUrls: ['./result.component.css']
 })
 export class ResultComponent implements OnChanges, OnInit {
-  @Input() numero: number[] = [];
+  @Input() risultato: number[] = [];
 
-  ngOnInit() {}
+  cifre: number = 4;
+
+  ngOnInit() {
+    for (var j = 0, len = this.cifre; j < len; j += 1) {
+      this.risultato[j] = j;
+    }
+  }
 
   ngOnChanges(changes: SimpleChanges) {}
 }

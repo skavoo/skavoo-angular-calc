@@ -4,14 +4,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DigitComponent } from './digit/digit.component';
-//import { ResultComponent } from './result/result.component';
+import { ResultComponent } from './result/result.component';
 import { OnReturnDirective } from './onreturn.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     DigitComponent,
-    //ResultComponent,
+    ResultComponent,
     OnReturnDirective
   ],
   imports: [BrowserModule, FormsModule],

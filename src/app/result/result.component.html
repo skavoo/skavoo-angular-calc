@@ -1,24 +1,14 @@
 <table class="result-table">
   <thead>
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th *ngFor="let column of risultato"></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><input type='number' [onReturn] id="item1"></td>
-      <td><input type='number' [onReturn] id="item2"></td>
-      <td><input type='number' [onReturn] id="item3"></td>
-      <td><input type='number' [onReturn] id="item4"></td>
-      <td style="padding: 10px;">,</td>
-      <td><input type='number' [onReturn] id="item5"></td>
-      <td><input type='number' [onReturn] id="item6"></td>
+      <td *ngFor="let n of risultato; let i = index">
+        <input type='number' [(ngModel)]="n" [onReturn] id="{{ 'item' + i }}">
+      </td>
     </tr>
   </tbody>
 </table>
