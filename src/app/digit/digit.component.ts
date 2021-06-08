@@ -14,8 +14,8 @@ import {
 export class DigitComponent implements OnChanges, OnInit {
   @Input() numero: number;
   @Input() segno: string = '=';
+  
   digits: string[] = [];
-
   cifreIntere: number = 4;
   cifreDecimali: number = 2;
 
