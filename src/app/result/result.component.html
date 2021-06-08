@@ -7,7 +7,7 @@
   <tbody>
     <tr>
       <td *ngFor="let n of risultato; let i = index">
-        <input type='number' [(ngModel)]="n" [onReturn] id="{{ 'item' + i }}">
+        <input type='number' [onReturn] id="{{ 'item' + i }}">
       </td>
     </tr>
   </tbody>
