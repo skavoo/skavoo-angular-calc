@@ -12,7 +12,7 @@ export class OnReturnDirective {
     if (e.which == 13 || e.keyCode == 13) {
       e.preventDefault();
       var id = e.srcElement.id.split('item')[1] - 1;
-      if (id >= 0) {
+      if (id > 0) {
         var nextId = 'item' + id;
         var el = <HTMLInputElement>document.getElementById(nextId);
         el.value = '';
