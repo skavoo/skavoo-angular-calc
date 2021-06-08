@@ -3,9 +3,7 @@ import {
   Input,
   OnInit,
   OnChanges,
-  SimpleChanges,
-  SimpleChange,
-  ChangeDetectionStrategy
+  SimpleChanges
 } from '@angular/core';
 
 @Component({
