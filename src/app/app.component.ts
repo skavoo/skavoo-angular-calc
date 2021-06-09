@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { SweetAlertOptions } from 'sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+import 'sweetalert2/src/sweetalert2.scss';
 
 @Component({
   selector: 'app-root',
@@ -80,7 +83,13 @@ export class AppComponent {
     if (risultatoNbr == calcolo) {
       alert('Bravo Leo, il risultato è corretto!');
     } else {
-      alert('Leo, il risultato non è corretto!');
+      Swal.fire({
+        title: 'Error!',
+        text: 'Do you want to continue',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      });
+      //alert('Leo, il risultato non è corretto!');
     }
   }
 }
