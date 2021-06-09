@@ -42,11 +42,16 @@
   border-radius: 4px;
 }
 
-.b:hover {
+.b:hover:enabled {
   color: white;
   background-color: #42545c;
 }
 
-.b:active {
+.b:active:enabled {
   transform: translateY(2px);
+}
+
+.b:disabled {
+  color: white;
+  background-color: #6d83e4;
 }
