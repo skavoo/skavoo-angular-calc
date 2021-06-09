@@ -1,6 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import swal, { SweetAlertOptions } from 'sweetalert2';
-import { SwalComponent } from '@toverux/ngx-sweetalert2';
+import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-root',
@@ -21,8 +20,6 @@ export class AppComponent {
   r4 = null;
   r5 = null;
   r6 = null;
-
-  @ViewChild('dialogsuccess') private dialogsuccess: SwalComponent;
 
   onReset() {
     this.numero1 = 0;
@@ -82,10 +79,19 @@ export class AppComponent {
 
     var risultatoNbr = Number(risultato);
     if (risultatoNbr == calcolo) {
-      alert('Bravo Leo, il risultato è corretto!');
+      Swal.fire({
+        title: 'Bravo!',
+        text: 'Leo, il risultato è corretto :)',
+        icon: 'success',
+        showConfirmButton: false
+      });
     } else {
-      this.dialogsuccess.show();
-      //alert('Leo, il risultato non è corretto!');
+      Swal.fire({
+        title: 'Che peccato!',
+        text: 'Leo, il risultato non è corretto :(',
+        icon: 'error',
+        showConfirmButton: false
+      });
     }
   }
 }
