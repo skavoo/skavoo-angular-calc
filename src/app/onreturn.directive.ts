@@ -25,7 +25,6 @@ export class OnReturnDirective {
         if (id < this.maxDigit) {
           var nextId = 'item' + id;
           var el = <HTMLInputElement>document.getElementById(nextId);
-          el.value = '';
           el.focus();
         }
       }

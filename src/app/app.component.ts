@@ -11,7 +11,6 @@ export class AppComponent {
   numero2 = 0;
 
   segno = '';
-  disableButtonCalcola = true;
 
   maxDigit = 7;
   r1 = null;
@@ -26,7 +25,6 @@ export class AppComponent {
     this.numero2 = 0;
 
     this.segno = '';
-    this.disableButtonCalcola = true;
 
     this.r1 = null;
     this.r2 = null;
@@ -38,12 +36,28 @@ export class AppComponent {
 
   onAddizione() {
     this.segno = '+';
-    this.disableButtonCalcola = false;
   }
 
   onSottrazione() {
     this.segno = '-';
-    this.disableButtonCalcola = false;
+  }
+
+  disableButtonCalcola() {
+    if (this.segno === '') {
+      return true;
+    }
+    if (
+      (this.r1 === null || this.r1 === '') &&
+      (this.r2 === null || this.r2 === '') &&
+      (this.r3 === null || this.r3 === '') &&
+      (this.r4 === null || this.r4 === '') &&
+      (this.r5 === null || this.r5 === '') &&
+      (this.r6 === null || this.r6 === '')
+    ) {
+      return true;
+    }
+
+    return false;
   }
 
   onCalcola() {
