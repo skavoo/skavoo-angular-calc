@@ -53,6 +53,8 @@ export class AppComponent {
         document.getElementById(item).className = 'result-table';
       }
     }
+
+    document.getElementById('numero1').focus();
   }
 
   validateDigit(id, tipo) {

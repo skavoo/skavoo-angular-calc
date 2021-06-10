@@ -64,6 +64,11 @@
   background-color: #42545c;
 }
 
+.b:focus {
+  color: white;
+  background-color: #42545c;
+}
+
 .b:active:enabled {
   transform: translateY(2px);
 }
