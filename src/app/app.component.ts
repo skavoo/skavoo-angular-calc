@@ -12,13 +12,19 @@ export class AppComponent {
 
   segno = '';
 
-  maxDigit = 7;
+  maxDigit = 12;
   r1 = null;
   r2 = null;
   r3 = null;
   r4 = null;
   r5 = null;
   r6 = null;
+
+  rip1 = null;
+  rip2 = null;
+  rip3 = null;
+  rip4 = null;
+  rip5 = null;
 
   onReset() {
     this.numero1 = 0;
@@ -32,6 +38,12 @@ export class AppComponent {
     this.r4 = null;
     this.r5 = null;
     this.r6 = null;
+
+    this.rip1 = null;
+    this.rip2 = null;
+    this.rip3 = null;
+    this.rip4 = null;
+    this.rip5 = null;
   }
 
   onAddizione() {
@@ -101,7 +113,7 @@ export class AppComponent {
       });
     } else {
       Swal.fire({
-        title: 'Che peccato!',
+        title: 'Oh no!',
         text: 'Leo, il risultato non è corretto :(',
         icon: 'error',
         showConfirmButton: false

@@ -1,7 +1,7 @@
 <p> Numero 1: <input type='number' [(ngModel)]='numero1'> </p>
+
 <p>
   Numero 2: <input type='number' [(ngModel)]='numero2'>
-
   <button class='b' style="margin-left:2.5em" (click)="onReset()">
     <i class="fa fa-repeat"></i>
     Reset
@@ -16,32 +16,35 @@
 </button>
 
 <br><br><br><br><br>
+
 <table class="digit-table-h">
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
       <td>k</td>
       <td>h</td>
       <td>da</td>
       <td>u</td>
-      <td>&nbsp;</td>
+      <td style="padding: 12px;">&nbsp;</td>
       <td>d</td>
       <td>c</td>
-      <td>&nbsp;</td>
     </tr>
   </tbody>
 </table>
+
+<table class="riporto-table">
+  <tbody>
+    <tr>
+      <td><input type='number' [(ngModel)]='rip5' onReturn [maxDigit]=maxDigit id="item10"></td>
+      <td><input type='number' [(ngModel)]='rip4' onReturn [maxDigit]=maxDigit id="item8"></td>
+      <td><input type='number' [(ngModel)]='rip3' onReturn [maxDigit]=maxDigit id="item6"></td>
+      <td><input type='number' [(ngModel)]='rip2' onReturn [maxDigit]=maxDigit id="item4"></td>
+      <td style="padding: 16px;">&nbsp;</td>
+      <td><input type='number' [(ngModel)]='rip1' onReturn [maxDigit]=maxDigit id="item2"></td>
+
+    </tr>
+  </tbody>
+</table>
+
 <digit-component [numero]=numero1 [segno]=segno></digit-component>
 <digit-component [numero]=numero2></digit-component>
 
@@ -59,16 +62,17 @@
   </thead>
   <tbody>
     <tr>
-      <td><input type='number' [(ngModel)]='r6' onReturn [maxDigit]=maxDigit id="item6"></td>
-      <td><input type='number' [(ngModel)]='r5' onReturn [maxDigit]=maxDigit id="item5"></td>
-      <td><input type='number' [(ngModel)]='r4' onReturn [maxDigit]=maxDigit id="item4"></td>
-      <td><input type='number' [(ngModel)]='r3' onReturn [maxDigit]=maxDigit id="item3"></td>
+      <td><input type='number' [(ngModel)]='r6' onReturn [maxDigit]=maxDigit id="item11"></td>
+      <td><input type='number' [(ngModel)]='r5' onReturn [maxDigit]=maxDigit id="item9"></td>
+      <td><input type='number' [(ngModel)]='r4' onReturn [maxDigit]=maxDigit id="item7"></td>
+      <td><input type='number' [(ngModel)]='r3' onReturn [maxDigit]=maxDigit id="item5"></td>
       <td style="padding: 10px;">,</td>
-      <td><input type='number' [(ngModel)]='r2' onReturn [maxDigit]=maxDigit id="item2"></td>
+      <td><input type='number' [(ngModel)]='r2' onReturn [maxDigit]=maxDigit id="item3"></td>
       <td><input type='number' [(ngModel)]='r1' onReturn [maxDigit]=maxDigit id="item1"></td>
     </tr>
   </tbody>
 </table>
+
 <p>
   <button class='b' (click)="onCalcola()" [disabled]="disableButtonCalcola()">
     <i class="fa fa-calculator"></i>

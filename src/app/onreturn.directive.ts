@@ -20,11 +20,12 @@ export class OnReturnDirective {
         e.srcElement.value > 9 ||
         !Number.isInteger(+e.srcElement.value)
       ) {
-        e.srcElement.value = '';
+        // e.srcElement.value = '';
+        // do nothing
       } else {
         if (id < this.maxDigit) {
           var nextId = 'item' + id;
-          var el = <HTMLInputElement>document.getElementById(nextId);
+          var el = document.getElementById(nextId);
           el.focus();
         }
       }
