@@ -44,6 +44,11 @@ export class AppComponent {
     this.rip3 = null;
     this.rip4 = null;
     this.rip5 = null;
+
+    for (var j = 1; j < 13; j += 1) {
+      var item = 'item' + j;
+      document.getElementById(item).className = 'result-table';
+    }
   }
 
   onAddizione() {
