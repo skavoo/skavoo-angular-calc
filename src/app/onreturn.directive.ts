@@ -22,9 +22,8 @@ export class OnReturnDirective {
       ) {
         e.srcElement.className = 'input-invalid';
       } else {
+        e.srcElement.className = 'result-table';
         if (id < this.maxDigit) {
-          e.srcElement.className = 'result-table';
-
           var nextId = 'item' + id;
           var el = document.getElementById(nextId);
           el.focus();
