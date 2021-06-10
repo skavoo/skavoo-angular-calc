@@ -51,6 +51,15 @@ export class AppComponent {
     }
   }
 
+  validateDigit(id) {
+    var el = <HTMLInputElement>document.getElementById(id);
+    if (+el.value < 0 || +el.value > 9 || !Number.isInteger(+el.value)) {
+      el.className = 'input-invalid';
+    } else {
+      el.className = 'result-table';
+    }
+  }
+
   onAddizione() {
     this.segno = '+';
   }
