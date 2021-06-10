@@ -1,17 +1,13 @@
-<p> Numero 1: <input type='number' [(ngModel)]='numero1'> </p>
+<p style="font-size: 30px;"> Numero 1: <input type='number' [(ngModel)]='numero1' style="font-size: 30px;"> </p>
 
-<p>
-  Numero 2: <input type='number' [(ngModel)]='numero2'>
-  <button class='b' style="margin-left:2.5em" (click)="onReset()">
-    <i class="fa fa-repeat"></i>
-    Reset
-  </button>
+<p style="font-size: 30px;">
+  Numero 2: <input type='number' [(ngModel)]='numero2' style="font-size: 30px;">
 </p>
 
 <button class='b' (click)="onAddizione()">
   <i class="fa fa-plus"></i>
 </button>
-<button class='b' style="margin-left:2.5em" (click)="onSottrazione()">
+<button class='b' style="margin-left:2.5em;" (click)="onSottrazione()">
   <i class="fa fa-minus"></i>
 </button>
 
@@ -40,7 +36,6 @@
       <td><input type='number' [(ngModel)]='rip2' onReturn [maxDigit]=maxDigit id="item4"></td>
       <td style="padding: 16px;">&nbsp;</td>
       <td><input type='number' [(ngModel)]='rip1' onReturn [maxDigit]=maxDigit id="item2"></td>
-
     </tr>
   </tbody>
 </table>
@@ -73,9 +68,12 @@
   </tbody>
 </table>
 
-
 <p>
-  <button class='b' (click)="onCalcola()" [disabled]="disableButtonCalcola()">
+  <button class='b' (click)="onReset()">
+    <i class="fa fa-repeat"></i>
+    Reset
+  </button>
+  <button class='b' style="margin-left:2.5em;" (click)="onCalcola()" [disabled]="disableButtonCalcola()">
     <i class="fa fa-calculator"></i>
     Calcola
   </button>
