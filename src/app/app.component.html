@@ -1,15 +1,16 @@
-<p style="font-size: 30px;"> Numero 1: <input type='number' [(ngModel)]='numero1' style="font-size: 30px;"> </p>
+<p style="font-size: 30px;">
+  Numero 1: <input type='number' [(ngModel)]='numero1' style="font-size: 30px;">
+  <button class='b' style="margin-left:2.5em;" (click)="onAddizione()">
+    <i class="fa fa-plus"></i>
+  </button>
+  <button class='b' style="margin-left:2.5em;" (click)="onSottrazione()">
+    <i class="fa fa-minus"></i>
+  </button>
+</p>
 
 <p style="font-size: 30px;">
   Numero 2: <input type='number' [(ngModel)]='numero2' style="font-size: 30px;">
 </p>
-
-<button class='b' (click)="onAddizione()">
-  <i class="fa fa-plus"></i>
-</button>
-<button class='b' style="margin-left:2.5em;" (click)="onSottrazione()">
-  <i class="fa fa-minus"></i>
-</button>
 
 <br><br><br>
 <hr style="width:50%;text-align:left;margin-left:0;height:5px;border-width:0;color:gray;background-color:black">
@@ -22,9 +23,11 @@
       <td>h</td>
       <td>da</td>
       <td>u</td>
+      <!--
       <td style="padding: 12px;">&nbsp;</td>
       <td>d</td>
       <td>c</td>
+      -->
     </tr>
   </tbody>
 </table>
@@ -32,17 +35,19 @@
 <table class="riporto-table">
   <tbody>
     <tr>
-      <td><input type='number' [(ngModel)]='rip5' onReturn [maxDigit]=maxDigit id="item10" (focusout)="validateDigit('item10')">
+      <td><input type='number' [(ngModel)]='rip5' onReturn [maxDigit]=maxDigit [tipo]="tipoRiporto" id="item10" (focusout)="validateDigit('item10', 'riporto')">
       </td>
-      <td><input type='number' [(ngModel)]='rip4' onReturn [maxDigit]=maxDigit id="item8" (focusout)="validateDigit('item8')">
+      <td><input type='number' [(ngModel)]='rip4' onReturn [maxDigit]=maxDigit [tipo]="tipoRiporto" id="item8" (focusout)="validateDigit('item8', 'riporto')">
       </td>
-      <td><input type='number' [(ngModel)]='rip3' onReturn [maxDigit]=maxDigit id="item6" (focusout)="validateDigit('item6')">
+      <td><input type='number' [(ngModel)]='rip3' onReturn [maxDigit]=maxDigit [tipo]="tipoRiporto" id="item6" (focusout)="validateDigit('item6', 'riporto')">
       </td>
+      <!--
       <td><input type='number' [(ngModel)]='rip2' onReturn [maxDigit]=maxDigit id="item4" (focusout)="validateDigit('item4')">
       </td>
       <td style="padding: 16px;">&nbsp;</td>
       <td><input type='number' [(ngModel)]='rip1' onReturn [maxDigit]=maxDigit id="item2" (focusout)="validateDigit('item2')">
       </td>
+      -->
     </tr>
   </tbody>
 </table>
@@ -57,26 +62,30 @@
       <th></th>
       <th></th>
       <th></th>
+      <!--
       <th></th>
       <th></th>
       <th></th>
+      -->
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><input type='number' [(ngModel)]='r6' onReturn [maxDigit]=maxDigit id="item11" (focusout)="validateDigit('item11')">
+      <td><input type='number' [(ngModel)]='r6' onReturn [maxDigit]=maxDigit [tipo]="tipoRisultato" id="item11" (focusout)="validateDigit('item11', 'risultato')">
       </td>
-      <td><input type='number' [(ngModel)]='r5' onReturn [maxDigit]=maxDigit id="item9" (focusout)="validateDigit('item9')">
+      <td><input type='number' [(ngModel)]='r5' onReturn [maxDigit]=maxDigit [tipo]="tipoRisultato" id="item9" (focusout)="validateDigit('item9', 'risultato')">
       </td>
-      <td><input type='number' [(ngModel)]='r4' onReturn [maxDigit]=maxDigit id="item7" (focusout)="validateDigit('item7')">
+      <td><input type='number' [(ngModel)]='r4' onReturn [maxDigit]=maxDigit [tipo]="tipoRisultato" id="item7" (focusout)="validateDigit('item7', 'risultato')">
       </td>
-      <td><input type='number' [(ngModel)]='r3' onReturn [maxDigit]=maxDigit id="item5" (focusout)="validateDigit('item5')">
+      <td><input type='number' [(ngModel)]='r3' onReturn [maxDigit]=maxDigit [tipo]="tipoRisultato" id="item5" (focusout)="validateDigit('item5', 'risultato')">
       </td>
+      <!--
       <td style="padding: 10px;">,</td>
       <td><input type='number' [(ngModel)]='r2' onReturn [maxDigit]=maxDigit id="item3" (focusout)="validateDigit('item3')">
       </td>
       <td><input type='number' [(ngModel)]='r1' onReturn [maxDigit]=maxDigit id="item1" (focusout)="validateDigit('item1')">
       </td>
+      -->
     </tr>
   </tbody>
 </table>

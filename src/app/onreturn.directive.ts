@@ -6,6 +6,7 @@ export class OnReturnDirective {
   private el: ElementRef;
   @Input() onReturn: string;
   @Input() maxDigit: number;
+  @Input() tipo: string;
 
   constructor(private _el: ElementRef) {
     this.el = this._el;
@@ -15,20 +16,34 @@ export class OnReturnDirective {
     if (e.which == 13 || e.keyCode == 13) {
       e.preventDefault();
       var id = +e.srcElement.id.split('item')[1] + 1;
-      if (
-        e.srcElement.value < 0 ||
-        e.srcElement.value > 9 ||
-        !Number.isInteger(+e.srcElement.value)
-      ) {
-        e.srcElement.className = 'input-invalid';
+      if (this.tipo === 'risultato') {
+        if (
+          e.srcElement.value < 0 ||
+          e.srcElement.value > 9 ||
+          !Number.isInteger(+e.srcElement.value)
+        ) {
+          e.srcElement.className = 'input-invalid';
+        } else {
+          e.srcElement.className = 'result-table';
+          if (id < this.maxDigit) {
+            var nextId = 'item' + id;
+            var el = document.getElementById(nextId);
+            el.focus();
+          }
+        }
       } else {
-        e.srcElement.className = 'result-table';
+        if (e.srcElement.value != null && e.srcElement.value != '') {
+          e.srcElement.className = 'input-evidenziato';
+        } else {
+          e.srcElement.className = 'result-table';
+        }
         if (id < this.maxDigit) {
           var nextId = 'item' + id;
           var el = document.getElementById(nextId);
           el.focus();
         }
       }
+
       return;
     }
   }

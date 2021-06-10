@@ -17,12 +17,12 @@ export class DigitComponent implements OnChanges, OnInit {
 
   digits: string[] = [];
   cifreIntere: number = 4;
-  cifreDecimali: number = 2;
+  cifreDecimali: number = 0;
 
   ngOnInit() {
     for (var j = 0; j < this.cifreIntere + this.cifreDecimali + 1; j += 1) {
       if (j === this.cifreIntere) {
-        this.digits.push(',');
+        //this.digits.push(',');
       } else {
         this.digits.push('\u00A0\u00A0');
       }
@@ -55,7 +55,7 @@ export class DigitComponent implements OnChanges, OnInit {
         }
 
         // virgola
-        this.digits.push(',');
+        //this.digits.push(',');
 
         // parte decimale
         if (splitted[1]) {

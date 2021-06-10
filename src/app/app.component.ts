@@ -11,6 +11,8 @@ export class AppComponent {
   numero2 = 0;
 
   segno = '';
+  tipoRiporto = 'riporto';
+  tipoRisultato = 'risultato';
 
   maxDigit = 12;
   r1 = null;
@@ -47,16 +49,26 @@ export class AppComponent {
 
     for (var j = 1; j < 13; j += 1) {
       var item = 'item' + j;
-      document.getElementById(item).className = 'result-table';
+      if (document.getElementById(item)) {
+        document.getElementById(item).className = 'result-table';
+      }
     }
   }
 
-  validateDigit(id) {
+  validateDigit(id, tipo) {
     var el = <HTMLInputElement>document.getElementById(id);
-    if (+el.value < 0 || +el.value > 9 || !Number.isInteger(+el.value)) {
-      el.className = 'input-invalid';
+    if (tipo == 'risultato') {
+      if (+el.value < 0 || +el.value > 9 || !Number.isInteger(+el.value)) {
+        el.className = 'input-invalid';
+      } else {
+        el.className = 'result-table';
+      }
     } else {
-      el.className = 'result-table';
+      if (el.value != null && el.value != '') {
+        el.className = 'input-evidenziato';
+      } else {
+        el.className = 'result-table';
+      }
     }
   }
 
@@ -70,16 +82,6 @@ export class AppComponent {
 
   disableButtonCalcola() {
     if (this.segno === '') {
-      return true;
-    }
-    if (
-      (this.r1 === null || this.r1 === '') &&
-      (this.r2 === null || this.r2 === '') &&
-      (this.r3 === null || this.r3 === '') &&
-      (this.r4 === null || this.r4 === '') &&
-      (this.r5 === null || this.r5 === '') &&
-      (this.r6 === null || this.r6 === '')
-    ) {
       return true;
     }
 
