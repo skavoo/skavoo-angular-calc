@@ -20,10 +20,11 @@ export class OnReturnDirective {
         e.srcElement.value > 9 ||
         !Number.isInteger(+e.srcElement.value)
       ) {
-        // e.srcElement.value = '';
-        // do nothing
+        e.srcElement.className = 'input-invalid';
       } else {
         if (id < this.maxDigit) {
+          e.srcElement.className = 'result-table';
+
           var nextId = 'item' + id;
           var el = document.getElementById(nextId);
           el.focus();

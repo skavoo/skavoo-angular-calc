@@ -72,3 +72,7 @@
   color: white;
   background-color: #6d83e4;
 }
+
+.input-invalid {
+  background-color: red;
+}
