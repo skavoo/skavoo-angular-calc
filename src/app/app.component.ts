@@ -7,8 +7,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  numero1 = 0;
-  numero2 = 0;
+  numero1 = null;
+  numero2 = null;
 
   segno = '';
   tipoRiporto = 'riporto';
@@ -29,8 +29,8 @@ export class AppComponent {
   rip5 = null;
 
   onReset() {
-    this.numero1 = 0;
-    this.numero2 = 0;
+    this.numero1 = null;
+    this.numero2 = null;
 
     this.segno = '';
 
